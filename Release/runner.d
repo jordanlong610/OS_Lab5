@@ -1,0 +1,1 @@
+runner.o: ../runner.c
