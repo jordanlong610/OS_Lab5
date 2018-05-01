@@ -88,6 +88,27 @@ void translateAddress()
 
 
 
+/*
+ * Uses bit shifting to get the page number
+ */
+unsigned long long int MapAddress(unsigned long long int address)
+{
+    address = MASK_BITS(address);
+
+    printf("The mapped address %llu contains:\n", address);
+
+    unsigned long long int page = address >> 8;
+    printf("Page Number : %llu\n", page);
+
+    unsigned long long int offset = address & 0xFF;
+
+    printf("Offset = %llu\n\n", offset);
+    return 0;
+}
+
+
+
+
 
 
 /**
